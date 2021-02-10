@@ -1,0 +1,84 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #fff;
+    color: #000;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+a {
+    color: #262626;
+    text-decoration: none;
+}
+  
+ul {
+    list-style: none;
+}
+  
+.container {
+    width: 100%;
+    max-width: 1100px;
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    padding: 0px 63px;
+    justify-content: space-between;
+    height: 60px;
+    font-size: 13px;
+}
+
+
+.main-nav .logo {
+    padding: 16px 6px 16px 10px;
+    float: none;
+    display: block;
+    height: auto;
+    width: 123px
+}
+
+.main-nav ul{
+    display: flex;
+}
+
+.main-nav ul li{
+    padding: 0 11px;
+}
+
+.main-nav .main-menu {
+    flex: 1;
+    margin-left: 20px;
+}
+
+.main-nav .right-menu button{
+    height: 20px;
+}
+
+.main-nav .right-menu .search-logo{
+    margin-top: 15px;
+    height: 20px;
+    width: auto;
+    border: none;
+    outline: transparent;
+    width: auto;
+}
+
+.main-nav .right-menu .in-logo{
+    margin-top: 15px;
+    height: 32px;
+    border: none;
+    outline: transparent;
+    width: auto;
+}
+
+.main-nav .main-menu li a:hover {
+    border-bottom: 2px solid #000;
+}
+
