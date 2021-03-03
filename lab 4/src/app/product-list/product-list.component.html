@@ -1,19 +1,30 @@
 <h2>Products</h2>
+<div class = "products-container">
+    <div class = "product" *ngFor = "let product of products">
+        <img [src] = "'/assets/img/' + product.image" > 
+        
+        <div>
+            <a [title] = "product.name + ' details'" [routerLink]="['/products', product.id]" >
+                {{product.name}}
+            </a>
+        </div>
+        <div>
+            <p>
+                Price: {{product.price}}$
+            </p>
+            <p class = "product-description"> Description: {{ product.description }}</p>
+            <p *ngIf = "product.rating"> Rating: {{product.rating}} </p>
+        </div>
+        <div>
+            <a class = "button product-share-btn" href = "https://www.whatsapp.com/?lang=ru">
+                Share
+            </a>
+            <a class = "button product-buy-btn" [href] = product.link>
+                Buy
+            </a>
+        </div>
 
-<div *ngFor = "let product of products">
-    <h3>
-        <a [title] = "product.name + ' details'" href="#" >
-            {{product.name}}
-        </a>
-    </h3>
-
-    <p *ngIf = "product.description">
-        Description: {{product.description}}
-    </p>
-
-    <button (click) = "share()">
-        Share    
-    </button>
+    </div>
 </div>
 
 

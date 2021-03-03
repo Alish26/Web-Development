@@ -1,1 +1,18 @@
-<p>Product-item Works!</p>
+<h2>Product Details</h2>
+
+<div class = "product-details-container" *ngIf="product">
+    <img [src] = "'/assets/img/' + product.image" >
+    <div>
+        <h3>{{ product.name }}</h3>
+        <h4>Price: {{ product.price }}$</h4>
+        <p>Description: {{ product.description }}</p>
+        <h4>Rating: {{ product.rating }}</h4>
+        <a class = "button product-share-btn" href = "https://www.whatsapp.com/?lang=ru">
+            Share
+        </a>
+        <a class = "button product-buy-btn" [href] = product.link>
+            Buy
+        </a>
+    </div>
+
+</div>

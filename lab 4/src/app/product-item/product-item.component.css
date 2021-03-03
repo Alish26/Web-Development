@@ -1,0 +1,8 @@
+.product-details-container {
+    display: flex;
+}
+
+.product-buy-btn {
+    position: absolute;
+    left: 600px;
+}

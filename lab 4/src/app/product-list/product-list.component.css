@@ -1,5 +1,43 @@
+.products-container {
+    display: grid;
+    grid-template-columns: 1.5fr 1.5fr 1.5fr;
+    grid-auto-rows:320px;
+}
+.product div a {
+    font-size: 10px;
+}
+img {
+    width: 100px;
+    height: auto;
+}
+.product {
+    position: relative;
+    z-index: 1;
+}
+
+.product div p {
+    font-size: 12px;
+}
+
+.product-share-btn {
+    position: absolute;
+    bottom: 10px;
+}
+
+.product-buy-btn {
+    position: absolute;
+    left: 80px;
+    bottom: 10px;
+}
 
 
+.product-detail {
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
