@@ -1,44 +1,33 @@
 from re import L
 from django.shortcuts import render
 from django.http.response import HttpResponse, JsonResponse
+from api.models import Product, Category
 
 # Create your views here.
-products = [
-    {
-        'id': i,
-        'name': f'Product {i}',
-        'price': i * 1000
-    }
-    for i in range(1, 11)
-]
-
 def list_products(request):
-    
-    return JsonResponse(products, safe=False)
+    products = Product.objects.all()
+    products_json = [product.to_json() for product in products]
+    return JsonResponse(products_json, safe=False)
 
 
 def show_product(request, product_id):
-    for product in products:
-        if product['id'] == product_id:
-            return JsonResponse(product)
+    try:
+        product = Product.objects.get(id=product_id)
+    except Product.DoesNotExit as e:
+        return JsonResponse({'message': str(e)}, status=400)
 
-    return JsonResponse({'message': 'Product doesn\'t exist '})
+    return JsonResponse(product.to_json())
 
-categories = [
-    {
-        'id': i,
-        'name': f'Category {i}'
-    }
-    for i in range(1, 11)
-]
 
 def list_categories(request):
-
-    return JsonResponse(categories, safe=False)
+    categories = Category.objects.all()
+    categories_json = [category.to_json() for category in categories]
+    return JsonResponse(categories_json, safe=False)
 
 def show_category(request, category_id):
-    for category in categories:
-        if category['id'] == category_id:
-            return JsonResponse(category)
+    try:
+        category = Category.objects.get(id=category_id)
+    except Category.DoesNotExit as e:
+        return JsonResponse({'message': str(e)}, status=400)
 
-    return JsonResponse({'message': 'Category doesn\'t exist '})
+    return JsonResponse(category.to_json())
