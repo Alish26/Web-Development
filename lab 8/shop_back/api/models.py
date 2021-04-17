@@ -7,5 +7,19 @@ class Product(models.Model):
     count = models.IntegerField()
     is_active = models.BooleanField()
 
+    def to_json(self):
+        return {
+            'id': self.id,
+            'price': self.price,
+            'description': self.descritption,
+            'count': self.count,
+            'is_active': self.is_active
+        }
+
 class Category(models.Model):
     name = models.TextField()
+
+    def to_json(self):
+        return {
+            'name': self.name
+        }

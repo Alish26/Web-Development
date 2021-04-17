@@ -1,7 +1,7 @@
 from re import L
 from django.shortcuts import render
 from django.http.response import HttpResponse, JsonResponse
-from api.models import Product, Category
+from .models import Product, Category
 
 # Create your views here.
 def list_products(request):
@@ -26,7 +26,7 @@ def list_categories(request):
 
 def show_category(request, category_id):
     try:
-        category = Category.objects.get(id=category_id)
+        category = Category.objects.get(id = category_id)
     except Category.DoesNotExit as e:
         return JsonResponse({'message': str(e)}, status=400)
 
